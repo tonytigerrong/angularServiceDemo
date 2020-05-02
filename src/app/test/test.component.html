@@ -1,0 +1,34 @@
+<p>test works from {{ name }}!</p>
+<h1>{{ greetUser() }}</h1>
+<h2 *ngIf="isTrue; then thenBlock; else elseBlock">{{ siteUrl }}</h2>
+<input #myInput type='text' [(ngModel)]="name" value="Tony" [disabled]="isDisabled"/>
+{{ name }}
+<p [class]="messageStyle"> style test class </p>
+<p [ngClass]="messageStyle"> style test ngClass</p>
+<h3 [style.color]="hasError? 'red' : 'green'">style binding test</h3>
+<h3 [ngStyle]="titleStyle" >style binding ngStyle</h3>
+<button (click)="onClick($event, myInput)">test</button>
+{{ greeting }}
+
+<ng-template #thenBlock>
+    then block
+</ng-template>
+<ng-template #elseBlock>
+    else block
+</ng-template>
+
+<div [ngSwitch]="color">
+    <div *ngSwitchCase="'red'"> red color</div>
+    <div *ngSwitchCase="'blue'"> blue color</div>
+    <div *ngSwitchDefault>default color</div>
+</div>
+
+<div *ngFor="let color of colors; index as ii">
+    <ul>
+        <li>{{ii}} {{ color }}</li>
+    </ul>
+</div>
+
+<div>parentData: {{appTitle}}</div>
+<button (click)="fireEvent()" >fireevent to parent app</button>
+<p>{{ messageStyle | json }}</p>

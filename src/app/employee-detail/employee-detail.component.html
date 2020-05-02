@@ -1,0 +1,8 @@
+<p>employee-detail works!</p>
+<h2>Employ Detail</h2>
+<ul *ngFor="let employee of employees">
+    <li>
+       {{ employee.id }}@{{ employee.name }} - {{ employee.age}}
+    </li>
+</ul>
+{{ errorMsg }}
